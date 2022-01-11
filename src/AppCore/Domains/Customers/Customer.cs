@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppCore.Domains.Customer
+namespace AppCore.Domains.Customers
 {
-    public class User:BaseEntity
+    public class Customer:BaseEntity
     {
         public string Name { get; set; }   
         public string Email { get; set; }   
