@@ -1,9 +1,15 @@
+using AppServices.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+//var serviceCollection = new ServiceCollection();
+
+//serviceCollection.ConfigureMyServices();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
