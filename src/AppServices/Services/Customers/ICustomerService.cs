@@ -9,5 +9,8 @@ namespace AppServices.Services.Customers
 
         Task<List<Customer>> GetAllCustomersAsync();
         Task<Customer> GetCustomerById(int id);
+        Task<Customer> InsertCustomer(Customer customer);
+        Task<Customer> UpdateCustomer(Customer customer);
+        Task<bool> DeleteCustomer(int id);
     }
 }

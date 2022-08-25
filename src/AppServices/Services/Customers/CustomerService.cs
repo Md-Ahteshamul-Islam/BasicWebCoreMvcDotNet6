@@ -32,12 +32,37 @@ namespace AppServices.Services.Customers
 
         public async Task<List<Customer>> GetAllCustomersAsync()
         {
-            //var context = new AppDbContext();
             return _context.Customers.ToList();
         }
         public async Task<Customer> GetCustomerById(int id)
         {
             return await _context.Customers.FindAsync(id);
+        }
+        public async Task<Customer> InsertCustomer(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            await _context.SaveChangesAsync();
+            return customer;
+        }
+        public async Task<Customer> UpdateCustomer(Customer customer)
+        {
+            var _customer = await _context.Customers.FindAsync(customer.Id);
+            _customer.Name = customer.Name;
+            _customer.Email = customer.Email;
+            _customer.Contact = customer.Contact;
+            await _context.SaveChangesAsync();
+            return _customer;
+        }
+
+        public async Task<bool> DeleteCustomer(int id)
+        {
+
+            var _customer = await _context.Customers.FindAsync(id);
+            if (_customer == null) return false;
+
+            _context.Customers.Remove(_customer);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         #endregion

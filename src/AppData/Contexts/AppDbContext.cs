@@ -14,7 +14,7 @@ namespace AppData.Contexts
 
         protected override void OnConfiguring( DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer(@"Server =DESKTOP-64KE9LQ; Database = BaseWebDotNet6; Trusted_Connection = True;");
+            builder.UseSqlServer(@"Server =AHTESHAM_ROCKY; Database = BaseWebDotNet6; Trusted_Connection = True;");
         }
     }
 }
